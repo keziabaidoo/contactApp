@@ -11,8 +11,8 @@ export default function WelcomeDetailedScreen({navigation}){
                   <Image source={require('../../assets/real.jpg')} style={styles.imageContainer}/>
               </View>
                 <View style={styles.colText}>
-                <Text style={styles.realText1}>KEEP IN TOUCH WITH THE PEOPLE OF AMPERSOND</Text>
-              <Text style={styles.realText2}>Sign in or register with your Armpersand email</Text>
+                <Text style={styles.realText1}>KEEP IN TOUCH WITH THE PEOPLE OF AMPERSAND</Text>
+              <Text style={styles.realText2}>Sign in or register with your Ampersand email</Text>
                 </View>
                    
                    <View style={styles.mainText}>
@@ -36,16 +36,17 @@ export default function WelcomeDetailedScreen({navigation}){
 
 const styles=StyleSheet.create({
     container:{
-        marginHorizontal:20
+      marginTop:1,
+        flexDirection:'column'
     },
     imageContainer:{
-        marginTop:10,
-        height:210,
-        width:320
+        
+        height:300,
+        width:400
         
     },
     colText:{
-        marginVertical:20
+        marginHorizontal:20
     },
     realText1:{
         marginTop:10,
@@ -72,6 +73,7 @@ const styles=StyleSheet.create({
          fontSize:16
     },
     mainText:{
+        marginHorizontal:20,
         marginTop:150,
         flexDirection:'row',
         justifyContent:'space-between'

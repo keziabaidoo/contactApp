@@ -1,16 +1,16 @@
 import React ,{Component} from 'react'
-import { View, Text,Image ,TouchableOpacity,StyleSheet,TextInput,ScrollView} from 'react-native'
+import { View, Text,Image ,TouchableOpacity,StyleSheet,TextInput} from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 
 
 
 
-export default function RegisterScreen(navigation){
+export default function RegisterScreen({navigation}){
     return(
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <TouchableOpacity>
             <AntDesign name="adduser" size={60} color="brown" style={styles.userText} />
-        <Text style={styles.profileText}>ADD PROFILE PHONE</Text>
+        <Text style={styles.profileText}>ADD PROFILE PHOTO</Text>
             </TouchableOpacity>
     
         <View style={styles.mainText}>
@@ -84,10 +84,13 @@ export default function RegisterScreen(navigation){
              
         </View>
 
-        <TouchableOpacity style={styles.delText}>
+        <TouchableOpacity onPress={()=>{
+            navigation.navigate('ContactInfo')
+        }}
+        style={styles.delText}>
             <Text style={styles.del1Text}>REGISTER</Text>
         </TouchableOpacity>
-        </ScrollView>
+        </View>
     )
 }
 
@@ -95,24 +98,27 @@ export default function RegisterScreen(navigation){
 
 const styles=StyleSheet.create({
     container:{
-        marginHorizontal:50
+        marginTop:5,
+        marginHorizontal:30
     },
      userText:{
             alignSelf:'center',
-         marginTop:60
+            
      },
      profileText:{
          textAlign:'center',
          color:'brown',
-         marginTop:10
+         marginTop:5,
+
 
      },
      mainText:{
-        marginTop:80,
+        marginTop:60,
         flexDirection:'row',
         justifyContent:'space-between',
         borderBottomWidth:1,
         borderBottomColor:'brown',
+        
         
         
     } ,

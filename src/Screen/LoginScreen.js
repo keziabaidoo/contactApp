@@ -1,12 +1,11 @@
 import React, {Component} from 'react'
 import { View,Image,Text,StyleSheet ,TextInput,TouchableOpacity} from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
 
 
 
 export default function LoginScreen({navigation}){
     return(
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <View style={styles.imageInfo}>
                 <Image source={require('../../assets/piven.jpg')}  style={styles.imageText}/>
             </View>
@@ -35,7 +34,11 @@ export default function LoginScreen({navigation}){
              
         </View>
           <View>
-          <TouchableOpacity style={styles.delText}>
+          <TouchableOpacity onPress={()=>{
+              navigation.navigate('ContactInfo')
+          }}
+          
+          style={styles.delText}>
             <Text style={styles.del1Text}>REGISTER</Text>
         </TouchableOpacity>
           </View>
@@ -46,20 +49,21 @@ export default function LoginScreen({navigation}){
             <Text style={styles.ol1Text}>Forgot?</Text>
             <Text style={styles.ol2Text}>Reset Password</Text>
         </TouchableOpacity>
-        </ScrollView>
+        </View>
     )
 }
 
 const styles=StyleSheet.create({
     container:{
-         marginHorizontal:30
+         marginHorizontal:20,
+         marginTop:1
     },
     imageInfo:{
         marginTop:10
     },
     imageText:{
-        height:200,
-        width:310,
+        height:210,
+        width:350,
         alignSelf:'center'
     },
     colText:{
@@ -121,6 +125,7 @@ const styles=StyleSheet.create({
         fontSize:16,
         borderBottomWidth:1,
         borderBottomColor:'brown',
-        color:'black'
+        color:'black',
+        
     }
 })

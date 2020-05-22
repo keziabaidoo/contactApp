@@ -15,7 +15,7 @@ export default function WelcomeScreen({navigation}){
         
 
           <View style={styles.textInfo}>
-          <Text style={styles.textInput}>ARMPSAND</Text>
+          <Text style={styles.textInput}>AMPERSAND</Text>
         <Text style={styles.textIn}>CONTACTS</Text>
           </View>
        
